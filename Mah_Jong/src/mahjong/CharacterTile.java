@@ -1,8 +1,20 @@
 package mahjong;
 
+import java.util.*;
+
 public class CharacterTile extends Tile {
 	
 	protected char symbol;
+	
+	private static final Map<Character,String> SYMBOL_MAP = new HashMap<>();
+	static {
+		SYMBOL_MAP.put('N', "North Wind");
+		SYMBOL_MAP.put('E', "East Wind");
+		SYMBOL_MAP.put('W', "West Wind");
+		SYMBOL_MAP.put('S', "South Wind");
+		SYMBOL_MAP.put('C', "Red Dragon");
+		SYMBOL_MAP.put('F', "Green Dragon");
+	}
 	
 	public CharacterTile(char symbol){
 		this.symbol = symbol;
@@ -10,27 +22,22 @@ public class CharacterTile extends Tile {
 	
 	public boolean matches(Tile other) {
 		
-		if(!super.matches(other)) return false;
+		if(!super.matches(other)) 
+			return false;
 		
 		CharacterTile x = (CharacterTile) other;
-		if(symbol == x.symbol)return true;
+		if(symbol == x.symbol)
+			return true;
 		
 		return false;
 	}
 	
 	public String toString() {
 		
-		if(Character.isDigit(symbol)) 
+		if(Character.isDigit(symbol) && symbol != '0') 
 			return "Character " + symbol;
-		switch(symbol) {
-			case 'N': return "North Wind";
-			case 'E': return "East Wind";
-			case 'W': return "West Wind";
-			case 'S': return "South Wind";
-			case 'C': return "Red Dragon";
-			case 'F': return "Green Dragon";
-			default: return "error";
-		}
+		
+		return SYMBOL_MAP.getOrDefault(symbol,"error");
 		
 	}
 
