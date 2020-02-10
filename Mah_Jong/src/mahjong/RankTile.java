@@ -1,3 +1,11 @@
+/*
+Joseph Bradford - CSIS 3230 - online
+Delroy A. Brinkerhoff
+
+Lab 3: Mah Jong intro
+RankTile.java
+*/
+
 package mahjong;
 
 public class RankTile extends Tile {

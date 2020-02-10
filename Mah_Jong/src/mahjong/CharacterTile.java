@@ -1,3 +1,11 @@
+/*
+Joseph Bradford - CSIS 3230 - online
+Delroy A. Brinkerhoff
+
+Lab 3: Mah Jong intro
+CharacterTile.java
+*/
+
 package mahjong;
 
 import java.util.*;
@@ -6,6 +14,8 @@ public class CharacterTile extends Tile {
 	
 	protected char symbol;
 	
+	//Just thought I would practice with hash maps
+	//and static initializer blocks
 	private static final Map<Character,String> SYMBOL_MAP = new HashMap<>();
 	static {
 		SYMBOL_MAP.put('N', "North Wind");

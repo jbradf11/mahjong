@@ -1,3 +1,11 @@
+/*
+Joseph Bradford - CSIS 3230 - online
+Delroy A. Brinkerhoff
+
+Lab 3: Mah Jong intro
+PictureTile.java
+*/
+
 package mahjong;
 
 public class PictureTile extends Tile {
